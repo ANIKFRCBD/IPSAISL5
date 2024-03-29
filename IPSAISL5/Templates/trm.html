@@ -8,11 +8,35 @@
             font-family: Arial, sans-serif;
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 </head>
 <body>
-    <div>
-        <h1>Accounting Transaction Register</h1>
-        {{ BACS | safe }}
-    </div>
+    <select id="dropdown_name" name="dropdown_name">
+        <option value="">All</option>
+        {% for value in BACS %}  <option value="{{ value }}">{{ value }}</option>
+        {% endfor %}
+      </select>
+    </select>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        var bacsData = {{ bacs_data|safe }}; // Access data from template context (all uppercase)
+        var dropdown = $('#dropdown_name');
+        var searchBar = $('#search_bar');
+    
+        searchBar.on('input', function() {
+          var filterText = $(this).val().toLowerCase();
+          dropdown.empty(); // Clear existing options before populating
+    
+          dropdown.append($('<option></option>').val('').text('All')); // Add "All" option again
+    
+          bacsData.forEach(function(value) {
+            if (value.toLowerCase().indexOf(filterText) > -1) {
+              dropdown.append($('<option></option>').val(value).text(value));
+            }
+          });
+        });
+      });
+    </script>
 </body>
 </html>
