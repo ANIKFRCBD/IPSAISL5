@@ -16,7 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from TRM import views as TRM
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('',TRM.trmpage,name="TRM"),
 ]
