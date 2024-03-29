@@ -8,13 +8,15 @@ from pathlib import Path
 source='DATASOURCE/BACS.csv'
 
 def trmpage(request):
-    datareading(request)
-    return render(request,"trm.html")
+    datasource=datareading(request).to_html(index=False,escape=False)
+    context={'BACS': datasource}
+    return render(request,"trm.html",context)
 
 def datareading(request):
-    bacs=pd.read_csv(source)
-    html_table=bacs.to_html(escape=False)
-    context={"BACS":html_table}
-    print(context)
-    return render (request, 'trm.html', context )
+  # Assuming 'source' is the path to your CSV file
+  print(request.method)
+  bacs = pd.read_csv(source)
+  html_table = bacs.iloc[:,:]
+ # Use key 'BACS' for consistency  # Optional, for debugging
+  return html_table
 

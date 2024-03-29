@@ -21,4 +21,5 @@ from TRM import views as TRM
 urlpatterns = [
     path('',TRM.trmpage,name="TRM"),
     path("__debug__/", include("debug_toolbar.urls")),
+    path('datasource',TRM.datareading,name="TRM")
 ]
