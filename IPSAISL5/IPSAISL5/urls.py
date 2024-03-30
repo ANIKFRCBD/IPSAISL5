@@ -16,10 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from TRM import views as TRM
+from TRM import views as tr
 
 urlpatterns = [
-    path('',TRM.trmpage,name="TRM"),
-    path("__debug__/", include("debug_toolbar.urls")),
-    path('datasource',TRM.datareading,name="TRM")
+    path('',tr.trmpage,name="TRM"),
+    path("__debug__/", include("debug_toolbar.urls"),),
+    path("TRM",include("TRM.urls"),)
 ]
