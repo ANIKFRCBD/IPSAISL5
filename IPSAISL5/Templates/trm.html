@@ -7,36 +7,42 @@
         body {
             font-family: Arial, sans-serif;
         }
+        table{
+          align-items: center;
+        }
+        th{
+          padding: 1ch;
+          background-color: bisque;
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 </head>
 <body>
-    <select id="dropdown_name" name="dropdown_name">
+  <h1 style="text-align: center;"> FRC TRM </h1>
+    
+    <div class="Table">
+    <table>
+      <thead>
+        <th>SL No.</th>
+        <th>Economic Code</th>
+        <th>Particulars</th>
+        <th>Units</th>
+        <th>Amount</th>
+      </thead>
+      <tbody>
+        
+      <td>{{form.serial}}</td>
+      <td>{{form.economiccode}}</td>
+      <td><select id="dropdown_name" name="dropdown_name">
         <option value="">All</option>
         {% for value in BACS %}  <option value="{{ value }}">{{ value }}</option>
         {% endfor %}
-      </select>
-    </select>
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-    <script>
-      $(document).ready(function() {
-        var bacsData = {{ bacs_data|safe }}; // Access data from template context (all uppercase)
-        var dropdown = $('#dropdown_name');
-        var searchBar = $('#search_bar');
-    
-        searchBar.on('input', function() {
-          var filterText = $(this).val().toLowerCase();
-          dropdown.empty(); // Clear existing options before populating
-    
-          dropdown.append($('<option></option>').val('').text('All')); // Add "All" option again
-    
-          bacsData.forEach(function(value) {
-            if (value.toLowerCase().indexOf(filterText) > -1) {
-              dropdown.append($('<option></option>').val(value).text(value));
-            }
-          });
-        });
-      });
-    </script>
+      </select></td>
+      <td>{{form.unit}}</td>
+      <td>{{form.amount}}</td>
+
+      </tbody>
+    </table>
+  </div>
 </body>
 </html>
