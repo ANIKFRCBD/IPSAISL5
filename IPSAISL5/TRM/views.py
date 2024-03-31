@@ -9,6 +9,7 @@ from .forms import trmform
 # Create your views here.t
 source='DATASOURCE/BACS.csv'
 transaction_list_for_approval='DATASOURCE/TRM_P.csv'
+to_be_approved_list='DATASOURCE/tobeapprovedlist.csv'
 
 def trmpage(request):
    dataform=0
@@ -49,5 +50,5 @@ def trmlister(transaction_list_for_approval):
 def trm_list_approver(request):
    to_be_approved_list=pd.read_csv(transaction_list_for_approval)
    to_be_approved_list.to_csv('DATASOURCE/tobeapprovedlist.csv')
-   return redirect('TRM')
+   return redirect("TRM")
    
