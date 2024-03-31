@@ -1,2 +1,29 @@
-0,1,2,3,4
-1,11111,Payable by individuals,1,10000
+serial,economiccode,particuars,unit,amount
+,,Payable by general government,,
+,,Payable by general government,,
+,,Payable by individuals,,
+,,Income tax payable by companies,,
+,,Income tax payable by companies,,
+,,Income tax payable by companies,,
+,,Income tax payable by companies,,
+,,Income tax payable by companies,,
+,,Income tax payable by companies,,
+,,Income tax payable by companies,,
+,,Income tax payable by companies,,
+,,Income tax payable by companies,,
+,11111.0,Income tax payable by individuals,,
+,11111.0,,,
+,11111.0,,,
+,11111.0,,,
+1.0,11111.0,Payable by corporations and other enterprises,1.0,10.0
+1.0,1.0,Revenue,1.0,10.0
+1.0,1.0,Payable by individuals,1.0,10.0
+1.0,1.0,From residents,1.0,10.0
+1.0,1.0,From residents,1.0,10.0
+1.0,1.0,From residents,1.0,10.0
+1.0,1.0,From residents,1.0,10.0
+1.0,1.0,From residents,1.0,10.0
+,11.0,Rail signal and inter-locking equipment,,
+,11.0,Rail signal and inter-locking equipment,,
+,11.0,Rail signal and inter-locking equipment,,
+1.0,11111.0,Income tax payable by individuals,,

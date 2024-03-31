@@ -17,6 +17,10 @@
         button{
           padding: 1cm ;
         }
+        .trm_list{
+        padding: 1in;
+        border: 1ch;
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 </head>
@@ -52,7 +56,14 @@
         
       </tbody>
       </table>
-
+      <div class="trm_list" style="text-align: center; padding: 1cm;">
+        <table>
+        {{ trm_list | safe }}
+        <form method='GET'action="{% url 'approval' %}">
+        <button style="background-color: green; color: white;"> Submit for Approval</button>
+      </form>
+      </table>
+      </div>
   </div>
 </body>
 </html>
