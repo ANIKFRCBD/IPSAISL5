@@ -4,5 +4,5 @@ from . import views as TRM
 urlpatterns = [
 
     path('dataproceecing',TRM.trmpage,name="processing"),
-    path('approval', TRM.trm_list_approver,name='approval'),
+    path('approval', TRM.trm_list_approver,name='trmapproval'),
 ]

@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TAM-IPSAISL5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table{
+          align-items: center;
+        }
+        th{
+          padding: 1ch;
+          background-color: bisque;
+        }
+        button{
+          padding: 1cm ;
+        }
+        .trm_list{
+        padding: 1in;
+        border: 1ch;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+  <h1 style="text-align: center;"> FRC TAM </h1>
+    
+    <div class="Table">
+    <table>
+      <tbody>
+      <div class="trm_list" style="text-align: center; padding: 1cm;">
+        <table>
+        {{ tam_list | safe }}
+        <form method='GET'action="{% url 'tamapprover' %}">
+        <button style="background-color: green; color: white;"> Approved</button>
+      </form>
+      </table>
+      </div>
+  </div>
+</body>
+</html>

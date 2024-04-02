@@ -59,11 +59,16 @@
       <div class="trm_list" style="text-align: center; padding: 1cm;">
         <table>
         {{ trm_list | safe }}
-        <form method='GET'action="{% url 'approval' %}">
+        <form method='GET'action="{% url 'trmapproval' %}">
         <button style="background-color: green; color: white;"> Submit for Approval</button>
       </form>
       </table>
       </div>
+  </div>
+  <div>
+    <form action="{% url 'tam' %}">
+    <button> TAM </button>
+  </form>
   </div>
 </body>
 </html>

@@ -49,6 +49,7 @@ def trmlister(transaction_list_for_approval):
 
 def trm_list_approver(request):
    to_be_approved_list=pd.read_csv(transaction_list_for_approval)
-   to_be_approved_list.to_csv('DATASOURCE/tobeapprovedlist.csv')
-   return redirect("TRM")
-   
+   to_be_approved_list.to_csv('DATASOURCE/tobeapprovedlist.csv',index=False)
+   to_be_approved_list.drop(to_be_approved_list.index,inplace=True)
+   to_be_approved_list.to_csv(transaction_list_for_approval,index=False)
+   return redirect("homepage")

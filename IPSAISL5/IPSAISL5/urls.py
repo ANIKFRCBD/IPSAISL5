@@ -19,7 +19,8 @@ from django.urls import path,include
 from TRM import views as tr
 
 urlpatterns = [
-    path('',tr.trmpage,name="TRM"),
+    path('',tr.trmpage,name="homepage"),
     path("__debug__/", include("debug_toolbar.urls"),),
-    path("TRM",include("TRM.urls"),)
+    path("TRM",include("TRM.urls"),),
+    path('TAM',include("TAM.urls"),)
 ]
