@@ -22,5 +22,6 @@ urlpatterns = [
     path('',tr.trmpage,name="homepage"),
     path("__debug__/", include("debug_toolbar.urls"),),
     path("TRM",include("TRM.urls"),),
-    path('TAM',include("TAM.urls"),)
+    path('TAM',include("TAM.urls"),),
+    path('budgetmodule',include('budgetmodule.urls')),
 ]

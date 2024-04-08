@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'TRM',
     'TAM',
+    'budgetmodule',
 ]
 
 MIDDLEWARE = [

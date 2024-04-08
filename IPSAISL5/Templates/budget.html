@@ -33,8 +33,6 @@
         <th>SL No.</th>
         <th>Economic Code</th>
         <th>Particulars</th>
-        <th>Units</th>
-        <th>Amount</th>
       </thead>
       <tbody>
         <form method="GET" action="{% url 'processing' %}">
@@ -49,8 +47,6 @@
               {% endfor %}
             </select>
           </td>
-          <td id="unit">{{form.unit}}</td>
-          <td id="amount">{{form.amount}}</td>
           <input type="submit" value="submit">
         </form>
         
