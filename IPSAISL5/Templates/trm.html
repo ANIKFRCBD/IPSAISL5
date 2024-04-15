@@ -37,7 +37,7 @@
         <th>Amount</th>
       </thead>
       <tbody>
-        <form method="GET" action="{% url 'processing' %}">
+        <form method="get" action="{% url 'processing' %}">
           {% csrf_token %}        
           <td id="serial">{{form.serial}}</td>
           <td id="economiccode">{{form.economiccode}}</td>
@@ -59,21 +59,21 @@
       <div class="trm_list" style="text-align: center; padding: 1cm;">
         <table>
         {{ trm_list | safe }}
-        <form method='GET'action="{% url 'trmapproval' %}">
+        <form method='get'action="{% url 'trmapproval' %}">
         <button style="background-color: green; color: white;"> Submit for Approval</button>
       </form>
       </table>
       </div>
   </div>
   <div>
-    <form action="{% url 'tam' %}">
+    <a href="{% url 'tam' %}">
     <button> TAM </button>
-  </form>
+    </a>
   </div>
   <div>
-    <form action="{% url 'budget' %}">
+    <a href="{% url 'budget' %}">
     <button> Budget </button>
-  </form>
+    </a>
   </div>
 </body>
 </html>

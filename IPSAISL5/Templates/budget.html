@@ -33,9 +33,10 @@
         <th>SL No.</th>
         <th>Economic Code</th>
         <th>Particulars</th>
+        <th>Budget (Type)</th>
       </thead>
       <tbody>
-        <form method="GET" action="{% url 'processing' %}">
+        <form method='post' action="{% url 'budget' %}">
           {% csrf_token %}        
           <td id="serial">{{form.serial}}</td>
           <td id="economiccode">{{form.economiccode}}</td>
@@ -47,24 +48,22 @@
               {% endfor %}
             </select>
           </td>
+          <td id="account_type">
+            <select id="account_type" name="account_type">
+              <option value="">All</option>
+              {% for value in type %}  
+                <option value="{{ value }}">{{ value }}</option>
+              {% endfor %}
+            </select>
+          </td>
           <input type="submit" value="submit">
         </form>
-        
+        {{ budget_list | safe }}
       </tbody>
       </table>
-      <div class="trm_list" style="text-align: center; padding: 1cm;">
-        <table>
-        {{ trm_list | safe }}
-        <form method='GET'action="{% url 'trmapproval' %}">
-        <button style="background-color: green; color: white;"> Submit for Approval</button>
-      </form>
-      </table>
-      </div>
   </div>
   <div>
-    <form action="{% url 'tam' %}">
     <button> TAM </button>
-  </form>
   </div>
   <div>
     <form action="{% url 'budget' %}">
