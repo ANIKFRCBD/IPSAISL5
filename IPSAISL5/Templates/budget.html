@@ -63,6 +63,19 @@
       </table>
   </div>
   <div>
+    <br></br>
+    <br></br>
+  </div>
+  <div class="entry_deletion">
+    <form action="" method="post">
+      {% csrf_token %}
+      <label for="delete"> Serial No</label>
+      <input type="text" id="delete">
+      <button>Delete</button>
+    </form>
+
+  </div>
+  <div>
     <button> TAM </button>
   </div>
   <div>
@@ -70,5 +83,6 @@
     <button> Budget </button>
   </form>
   </div>
+
 </body>
 </html>
