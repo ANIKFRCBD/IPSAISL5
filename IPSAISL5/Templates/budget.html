@@ -19,7 +19,7 @@
       min-width: 100%;
       min-height: 100%;
       margin: 0;
-      background: linear-gradient(45deg, #49a09d, #5f2c82);
+      background: linear-gradient(180deg, #c1d1d0, #49a09d);
       font-family: sans-serif;
       font-weight: 100;
     }
@@ -108,9 +108,48 @@
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-lg sticky-top shadow" style="background-color: beige";>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">FRC</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">TRM</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'tam' %}">TAM</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'budget' %}">Budget</a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Link
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Link</a>
+          </li> -->
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
   <h1 style="text-align: center; margin-top: 20px; margin-bottom: 20px;"> FRC TRM </h1>
 
-  <div class="d-flex justify-content-center gap-3" style="margin-bottom: 20px;">
+  <!-- <div class="d-flex justify-content-center gap-3" style="margin-bottom: 20px;">
     <div>
       <a href="{% url 'tam' %}"><button class="btn btn-secondary btn-block shadow"> TAM </button></a>
     </div>
@@ -119,7 +158,7 @@
         <button class="btn btn-secondary btn-block shadow"> Budget </button>
       </form>
     </div>
-  </div>
+  </div> -->
 
 
   <div class="d-flex justify-content-center"  style="margin-bottom: 20px;">
@@ -178,8 +217,6 @@
     {{ budget_list | safe }}
   </div>
 
-  <div>
-  </div>
   <div class="entry_deletion d-flex justify-content-center">
     <form action="" method="post">
       {% csrf_token %}
