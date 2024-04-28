@@ -110,6 +110,18 @@
 <body>
   <h1 style="text-align: center; margin-top: 20px; margin-bottom: 20px;"> FRC TRM </h1>
 
+  <div class="d-flex justify-content-center gap-3" style="margin-bottom: 20px;">
+    <div>
+      <a href="{% url 'tam' %}"><button class="btn btn-secondary btn-block shadow"> TAM </button></a>
+    </div>
+    <div>
+      <form action="{% url 'budget' %}">
+        <button class="btn btn-secondary btn-block shadow"> Budget </button>
+      </form>
+    </div>
+  </div>
+
+
   <div class="d-flex justify-content-center"  style="margin-bottom: 20px;">
     <table>
       <thead>
@@ -168,7 +180,7 @@
 
   <div>
   </div>
-  <div class="entry_deletion">
+  <div class="entry_deletion d-flex justify-content-center">
     <form action="" method="post">
       {% csrf_token %}
       <label for="delete"> Serial No</label>
@@ -177,14 +189,7 @@
     </form>
 
   </div>
-  <div>
-    <button class="btn btn-secondary btn-block shadow"> TAM </button>
-  </div>
-  <div>
-    <form action="{% url 'budget' %}">
-      <button class="btn btn-secondary btn-block shadow"> Budget </button>
-    </form>
-  </div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

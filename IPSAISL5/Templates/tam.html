@@ -1,43 +1,111 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>TAM-IPSAISL5</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
+  <title>TAM-IPSAISL5</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    html,
+    body {
+      min-width: 100%;
+      min-height: 100%;
+      margin: 0;
+      background: linear-gradient(45deg, #49a09d, #5f2c82);
+      font-family: sans-serif;
+      font-weight: 100;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    table {
+      border-radius: 10px;
+      border-collapse: collapse;
+      width: 100%;
+      /* position: relative; */
+      /* width: 800px; */
+      /* border-collapse: collapse; */
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      width: max-content;
+    }
+
+    th,
+    td {
+      text-align: justify;
+      padding: 8px;
+      /* border: 1px solid #dddddd; */
+      /* padding: 15px; */
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      /* width: auto; */
+      /* position: sticky;
+  top: 0; */
+    }
+
+    th {
+      /* background-color: #f2f2f2;
+    font-weight: bold; */
+      /* z-index: 2; */
+      text-align: justify;
+
+    }
+
+    thead {
+      th {
+        background-color: #55608f;
+        /* position: sticky;
+    top: 0; */
+      }
+    }
+
+    tbody {
+      tr {
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.3);
         }
-        table{
-          align-items: center;
+      }
+
+      td {
+        position: relative;
+
+        &:hover {
+          &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -9999px;
+            bottom: -9999px;
+            background-color: rgba(255, 255, 255, 0.2);
+            z-index: -1;
+          }
         }
-        th{
-          padding: 1ch;
-          background-color: bisque;
-        }
-        button{
-          padding: 1cm ;
-        }
-        .trm_list{
-        padding: 1in;
-        border: 1ch;
-        }
-    </style>
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+      }
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 </head>
+
 <body>
   <h1 style="text-align: center;"> FRC TAM </h1>
-    
-    <div class="Table">
-    <table>
-      <tbody>
-      <div class="trm_list" style="text-align: center; padding: 1cm;">
-        <table>
-        {{ tam_list | safe }}
-        <form method='GET'action="{% url 'tamapprover' %}">
+
+  <div class="">
+    <div class="d-flex justify-content-center" style="text-align: center; padding: 1cm;">
+      {{ tam_list | safe }}
+      <form method='GET' action="{% url 'tamapprover' %}">
         <button style="background-color: green; color: white;"> Approved</button>
       </form>
-      </table>
-      </div>
+    </div>
   </div>
 </body>
+
 </html>
